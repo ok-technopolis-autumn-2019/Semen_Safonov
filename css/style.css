@@ -21,12 +21,12 @@
     height: 65px;
 }
 
-.main-controls__select-all {
+.main-controls__select-all-button{
     background: url("../image/select-all.png") no-repeat center center;
+    text-indent: -9999px;
     height: 65px;
     width: 60px;
     border: none;
-    text-indent: -9999px;
     white-space: nowrap;
 }
 
@@ -47,11 +47,12 @@
 }
 
 .task-item__view {
+    background: white;
+    margin: 0 0 0 30%;
     border: 1px #e6e6e6 solid;
     display: flex;
     align-items: center;
     width: 550px;
-    background: white;
 }
 
 .task-item__view:hover {
@@ -76,7 +77,7 @@
 }
 
 .task-item__status:checked + .task-item__status-label {
-    background: url("../image/completed.png") no-repeat 6px 8px;
+    background: url("../image/completed.png") no-repeat center center;
     border-color: #5dc2af;
 }
 
@@ -88,7 +89,7 @@
 
 .task-item__text {
     word-break: break-all;
-    flex-grow: 20;
+    text-overflow: clip;
     font-weight: 100;
     font-size: 25px;
 }
@@ -99,12 +100,18 @@
 }
 
 .task-item__delete {
-    background: url("../image/close.png") no-repeat;
+    background: url("../image/close.png") no-repeat center center;
     text-indent: -9999px;
+    visibility: hidden;
     border: none;
+    height: 50px;
+    width: 50px;
+    display: none;
+    float: right;
 }
 
 .task-item__view:hover .task-item__delete {
+    visibility: visible;
     display: block;
 }
 
@@ -112,23 +119,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background: white;
     height: 45px;
     width: 550px;
-    background: white;
+    margin: auto;
     border: 1px #e6e6e6 solid;
 }
 
 .task-clear-completed {
     border: none;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 15px;
     height: 45px;
     color: #cccccc;
-    margin-right: 15px;
+    background: white;
+    font-family: Roboto;
+    margin-right: 5px;
 }
 
 .actions-bar__item {
-    font-size: 14px;
+    font-size: 15px;
     color: #cccccc;
 }
 
@@ -142,7 +152,16 @@
 }
 
 .task-filter__text {
+    font-size: 15px;
     padding: 2px 7px;
     border: 1px transparent solid;
     border-radius: 5px;
+}
+
+.task-filter__input:checked + .task-filter__text {
+    border-color: #ebdfdf;
+}
+
+.task-filter__input:focus + .task-filter__text {
+    border-color: #ebdfdf;
 }
