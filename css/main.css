@@ -3,13 +3,6 @@ h1{
     text-align: center;
 }
 
-section{
-    border: 1px #e6e6e6 solid;
-    display: flex;
-    align-items: center;
-    width: 550px;
-}
-
 body{
     background-color: #f2f2f2;
     font-family: Roboto, sans-serif;
@@ -18,7 +11,7 @@ body{
 
 ul{
     margin: 0;
-    padding: auto;
+    padding: 0;
 }
 
 li{
@@ -29,4 +22,8 @@ input[type="text"] {
     border: 0 none;
     font-family: Roboto, sans-serif;
     color: #cccccc;
+}
+
+input:focus, button:focus {
+    outline: none;
 }

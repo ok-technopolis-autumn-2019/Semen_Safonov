@@ -46,13 +46,17 @@
     font-style: italic;
 }
 
+.todo-app__tasks {
+    margin: auto;
+    width: 550px;
+}
+
 .task-item__view {
     background: white;
-    margin: 0 0 0 30%;
     border: 1px #e6e6e6 solid;
     display: flex;
     align-items: center;
-    width: 550px;
+    position: relative;
 }
 
 .task-item__view:hover {
@@ -113,6 +117,10 @@
 .task-item__view:hover .task-item__delete {
     visibility: visible;
     display: block;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .todo-app__actions-bar {
