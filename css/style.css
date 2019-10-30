@@ -1,9 +1,9 @@
 @import "main.css";
 
-.todo-app__main-controls {
-    border: 1px #e6e6e6 solid;
+.todo-app{
     margin: auto;
     width: 550px;
+    border: 1px #e6e6e6 solid;
     background: white;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .main-controls__select-all-button{
-    background: url("../image/select-all.png") no-repeat center center;
+    background: url("../image/select-all.svg") no-repeat center center;
     text-indent: -9999px;
     height: 65px;
     width: 60px;
@@ -46,17 +46,10 @@
     font-style: italic;
 }
 
-.todo-app__tasks {
-    margin: auto;
-    width: 550px;
-}
-
 .task-item__view {
-    background: white;
     border: 1px #e6e6e6 solid;
     display: flex;
     align-items: center;
-    position: relative;
 }
 
 .task-item__view:hover {
@@ -64,9 +57,11 @@
 }
 
 .task-item__status {
-    border-radius: 100%;
-    margin: 0 0 0 -30px;
-    display: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    margin: 0 0 10px 0;
 }
 
 .task-item__status-label {
@@ -81,8 +76,12 @@
 }
 
 .task-item__status:checked + .task-item__status-label {
-    background: url("../image/completed.png") no-repeat center center;
+    background: url("../image/completed.svg") no-repeat center center;
     border-color: #5dc2af;
+}
+
+.task-item_status:focus + .task-item_status-label{
+    border-color: #cccccc;
 }
 
 .task-item__view:hover,
@@ -92,10 +91,12 @@
 }
 
 .task-item__text {
-    word-break: break-all;
+    word-break: break-word;
     text-overflow: clip;
     font-weight: 100;
     font-size: 25px;
+    padding: 5px 0 5px 0;
+    width: 520px;
 }
 
 .task-item__status:checked ~ .task-item__text {
@@ -104,40 +105,35 @@
 }
 
 .task-item__delete {
-    background: url("../image/close.png") no-repeat center center;
+    background: url("../image/close.svg") no-repeat center center;
+    white-space: nowrap;
     text-indent: -9999px;
-    visibility: hidden;
+    opacity: 0;
     border: none;
     height: 50px;
     width: 50px;
-    display: none;
-    float: right;
+    padding-right: 10px;
 }
 
 .task-item__view:hover .task-item__delete {
-    visibility: visible;
-    display: block;
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
+    opacity: 1;
+}
+
+.task-item__delete:focus{
+    opacity: 1;
 }
 
 .todo-app__actions-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
     height: 45px;
-    width: 550px;
-    margin: auto;
-    border: 1px #e6e6e6 solid;
 }
 
 .task-clear-completed {
     border: none;
     font-weight: 300;
-    font-size: 15px;
+    font-size: 14px;
     height: 45px;
     color: #cccccc;
     background: white;
@@ -146,7 +142,7 @@
 }
 
 .actions-bar__item {
-    font-size: 15px;
+    font-size: 14px;
     color: #cccccc;
 }
 
@@ -155,12 +151,12 @@
 }
 
 .task-filter__input {
-    position: absolute;
-    visibility: hidden;
+    left: -9999px;
+    opacity: 0;
 }
 
 .task-filter__text {
-    font-size: 15px;
+    font-size: 14px;
     padding: 2px 7px;
     border: 1px transparent solid;
     border-radius: 5px;
@@ -171,5 +167,5 @@
 }
 
 .task-filter__input:focus + .task-filter__text {
-    border-color: #ebdfdf;
+    border-color: #cccccc;
 }

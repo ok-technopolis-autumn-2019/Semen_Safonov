@@ -23,7 +23,3 @@ input[type="text"] {
     font-family: Roboto, sans-serif;
     color: #cccccc;
 }
-
-input:focus, button:focus {
-    outline: none;
-}
