@@ -1,0 +1,49 @@
+@import "mixin.styl"
+@import "vars.styl"
+
+.todo-app__actions-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+}
+
+.task-clear-completed {
+  border: none;
+  background-color: white;
+  font-weight: 300;
+  font-size: 14px;
+  height: 45px;
+  color: $colors.greyC;
+  font-family: Roboto;
+  margin-right: 5px;
+}
+
+.actions-bar__item {
+  font-size: 14px;
+  color: $colors.greyC;
+}
+
+.task-counter {
+  margin-left: 15px;
+}
+
+.task-filter_input {
+  left: -9999px
+  opacity:0;
+
+  &:checked + .task-filter_text {
+    border-color: $colors.grey_checked;
+  }
+
+  &:focus + .task-filter_text {
+    border-color: $colors.greyC;
+  }
+}
+
+.task-filter_text {
+  font-size: 14px;
+  padding: 2px 7px;
+  border: 1px transparent solid;
+  border-radius: 5px;
+}

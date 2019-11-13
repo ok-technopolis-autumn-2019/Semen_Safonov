@@ -1,0 +1,77 @@
+@import "mixin.styl"
+@import "vars.styl"
+
+.task-item_view {
+  border-bottom: $item_border;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: $colors.hover;
+  }
+
+  &:hover
+  .task-item_status:not(:checked)
+  + .task-item_status-label {
+    border-color: $colors.greyC;
+  }
+
+  &:hover .task-item_delete {
+    opacity: 1;
+  }
+}
+
+.task-item_status-label {
+  elem_size(40px,40px);
+  box-sizing: border-box;
+  margin: 10px 10px 10px 10px;
+  border: $item_border;
+  border-radius: 50%;
+  background-color: white;
+  flex-shrink: 0;
+}
+
+.task-item_status {
+  position: absolute;
+  elem_size(60px, 60px);
+  opacity: 0;
+  margin: 0 0 10px 0;
+
+
+  &:checked + .task-item_status-label {
+    background: url("../image/completed.svg") no-repeat center center;
+    border-color: $colors.biruza;
+  }
+
+  &:checked ~ .task-item__text{
+    color: $colors.greyC;
+    text-decoration: line-through;
+  }
+
+  &:focus + .task-item_status-label {
+    border-color: $colors.greyC;
+  }
+}
+
+.task-item_text {
+  word-break: break-word;
+  text-overflow: clip;
+  font-weight: 100;
+  font-size: 25px;
+  padding: 5px 0 5px 0;
+  width: 520px;
+}
+
+.task-item_delete {
+  background: url("../image/close.svg") no-repeat center center;
+  text-indent: -9999px;
+  white-space: nowrap;
+  border: none;
+  elem_size(50px, 50px);
+  margin-right: 10px;
+  opacity: 0;
+
+  &:focus {
+    opacity: 1;
+  }
+}
