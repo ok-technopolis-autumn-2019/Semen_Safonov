@@ -14,34 +14,34 @@
   font-weight: 300;
   font-size: 14px;
   height: 45px;
-  color: $colors.greyC;
+  color: colors[1];
   font-family: Roboto;
   margin-right: 5px;
 }
 
 .actions-bar__item {
   font-size: 14px;
-  color: $colors.greyC;
+  color: colors[1];
 }
 
 .task-counter {
   margin-left: 15px;
 }
 
-.task-filter_input {
+.task-filter__input {
   left: -9999px
   opacity:0;
 
-  &:checked + .task-filter_text {
-    border-color: $colors.grey_checked;
+  &:checked + .task-filter__text {
+    border-color: colors[3];
   }
 
-  &:focus + .task-filter_text {
-    border-color: $colors.greyC;
+  &:focus + .task-filter__text {
+    border-color: colors[1];
   }
 }
 
-.task-filter_text {
+.task-filter__text {
   font-size: 14px;
   padding: 2px 7px;
   border: 1px transparent solid;
