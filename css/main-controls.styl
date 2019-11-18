@@ -1,0 +1,32 @@
+@import "mixin.styl"
+@import "vars.styl"
+
+.main-controls_all {
+  border-bottom: $item_border;
+  display: flex;
+  align-items: center;
+  height: 65px;
+}
+
+.main-controls__select-all-button {
+  background: url("../image/select-all.svg") no-repeat center center;
+  elem_size(65px, 60px);
+  border:none;
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+.main-controls__create-new {
+  width: 100%;
+}
+
+.main-controls__create-new-input {
+  box-sizing: border-box;
+  elem_size(60px, 100%);
+  font-size: 25px;
+
+  &::placeholder {
+    color: colors[1];
+    font-style: italic;
+  }
+}
